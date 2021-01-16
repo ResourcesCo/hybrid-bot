@@ -1071,6 +1071,20 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@discordjs/collection@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@discordjs/collection/-/collection-0.1.6.tgz#9e9a7637f4e4e0688fd8b2b5c63133c91607682c"
+  integrity sha512-utRNxnd9kSS2qhyivo9lMlt5qgAUasH2gb7BEOn6p0efFh24gjGomHzWKMAPn2hEReOPQZCJaRKoURwRotKucQ==
+
+"@discordjs/form-data@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@discordjs/form-data/-/form-data-3.0.1.tgz#5c9e6be992e2e57d0dfa0e39979a850225fb4697"
+  integrity sha512-ZfFsbgEXW71Rw/6EtBdrP5VxBJy4dthyC0tpQKGKmYFImlmmrykO14Za+BiIVduwjte0jXEBlhSKf0MWbFp9Eg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
 "@dsherret/to-absolute-glob@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@dsherret/to-absolute-glob/-/to-absolute-glob-2.0.2.tgz#1f6475dc8bd974cea07a2daf3864b317b1dd332c"
@@ -3516,6 +3530,13 @@ abab@^2.0.3:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.5.tgz#c0b678fb32d60fc1219c784d6a826fe385aeb79a"
   integrity sha512-9IK9EadsbHo6jLWIpxpR6pL0sazTXV6+SQv25ZB+F7Bj9mJNaOc4nCRabwd5M/JwmUa8idz6Eci6eKfJryPs6Q==
+
+abort-controller@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
+  integrity sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
+  dependencies:
+    event-target-shim "^5.0.0"
 
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
@@ -6332,6 +6353,20 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+discord.js@^12.5.1:
+  version "12.5.1"
+  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.5.1.tgz#992b45753e3815526a279914ccc281d3496f5990"
+  integrity sha512-VwZkVaUAIOB9mKdca0I5MefPMTQJTNg0qdgi1huF3iwsFwJ0L5s/Y69AQe+iPmjuV6j9rtKoG0Ta0n9vgEIL6w==
+  dependencies:
+    "@discordjs/collection" "^0.1.6"
+    "@discordjs/form-data" "^3.0.1"
+    abort-controller "^3.0.0"
+    node-fetch "^2.6.1"
+    prism-media "^1.2.2"
+    setimmediate "^1.0.5"
+    tweetnacl "^1.0.3"
+    ws "^7.3.1"
+
 dns-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dns-equal/-/dns-equal-1.0.0.tgz#b39e7f1da6eb0a75ba9c17324b34753c47e0654d"
@@ -7025,6 +7060,11 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+event-target-shim@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
+  integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
 eventemitter3@^3.1.0:
   version "3.1.2"
@@ -11892,6 +11932,11 @@ prettysize@^2.0.0:
   resolved "https://registry.yarnpkg.com/prettysize/-/prettysize-2.0.0.tgz#902c02480d865d9cc0813011c9feb4fa02ce6996"
   integrity sha512-VVtxR7sOh0VsG8o06Ttq5TrI1aiZKmC+ClSn4eBPaNf4SHr5lzbYW+kYGX3HocBL/MfpVrRfFZ9V3vCbLaiplg==
 
+prism-media@^1.2.2:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/prism-media/-/prism-media-1.2.3.tgz#37bbb11726674a73fe56a2df4de76aa91d2141b7"
+  integrity sha512-fSrR66n0l6roW9Rx4rSLMyTPTjRTiXy5RVqDOurACQ6si1rKHHKDU5gwBJoCsIV0R3o9gi+K50akl/qyw1C74A==
+
 prismjs@^1.8.4:
   version "1.23.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.23.0.tgz#d3b3967f7d72440690497652a9d40ff046067f33"
@@ -14233,6 +14278,11 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
+tweetnacl@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
+  integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"
@@ -15048,7 +15098,7 @@ ws@^6.0.0, ws@^6.2.1:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^7.2.3:
+ws@^7.2.3, ws@^7.3.1:
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.2.tgz#782100048e54eb36fe9843363ab1c68672b261dd"
   integrity sha512-T4tewALS3+qsrpGI/8dqNMLIVdq/g/85U98HPMa6F0m6xTbvhXU6RCQLqPH3+SlomNV/LdY6RXEbBpMH6EOJnA==
