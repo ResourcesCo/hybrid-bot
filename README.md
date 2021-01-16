@@ -1,24 +1,62 @@
-# Redwood
+# hybrid-bot
 
-> **WARNING:** RedwoodJS software has not reached a stable version 1.0 and should not be considered suitable for production use. In the "make it work; make it right; make it fast" paradigm, Redwood is in the later stages of the "make it work" phase.
+This is a serverless/serverful Discord bot in [Redwood][redwood].
 
-## Getting Started
-- [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
-- [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
+Discord bots need a process running, with a client connection. It is a lot like
+pgbouncer which provides a serverless application access to the database.
 
-### Setup
+# Running
 
-We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
+First, copy `.env.example` to `.env`, and set `DATABASE_URL` and
+`TEST_DATABASE_URL`.
 
-```terminal
-yarn install
+Then, create a bot on Discord with the send messages permission, and copy the
+bot token, and place it in `.env`.
+
+To run the bot, run `yarn rw build api && yarn workspace api start-bot`.
+
+# How it works
+
+The bot runs inside of the API. It is not a serverless function, but is in `lib`.
+
+The Discord.js client library is installed in the API using Yarn workspaces:
+
+```bash
+yarn workspace api add discord.js
 ```
 
-### Fire it up
+The server is in `api/src/lib/bot/index.js`. The following line in it loads the
+`.env` and initializes [Redwood][redwood]:
 
-```terminal
-yarn redwood dev
+```jsx
+import '@redwoodjs/api'
 ```
 
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`. 
+This is added to scripts in `api/package.json`:
+
+```
+  "scripts": {
+    "start-bot": "node dist/lib/bot"
+  }
+```
+
+# Todo
+
+- Use the Redwood app, including serverless functions, to do something useful,
+  and show them running neatly side-by-side!
+- Document deployment of the serverless portion to Netlify/Vercel and the
+  serverful portion to DigitalOcean/Vultr
+- Add deployment to the build step
+- Keep track of the bot status in the database, and let admin administrate it
+  in the app
+- Add a word about making the entire app serverful
+- Investigate self-hosted serverless with OpenFaaS
+
+# Demo
+
+There is a bot called `@hybrid-bot` running in the
+[Resources.co Discord community][discord-community]. It will reply when you
+mention it.
+
+[discord-community]: https://discord.gg/BSjufZhFsM
+[redwood]: https://redwoodjs.com/
