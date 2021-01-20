@@ -1,5 +1,13 @@
-import '@redwoodjs/api'
+import { gql, request } from 'graphql-request'
 import Discord from 'discord.js'
+
+const configQuery = gql`
+  query getConfig($apiKey: String!) {
+    config(apiKey: $apiKey) {
+      botToken
+    }
+  }
+`
 
 class Bot {
   constructor() {
@@ -11,9 +19,19 @@ class Bot {
     })
   }
 
+  async loadConfig() {
+    const apiBase = process.env.API_BASE
+    const apiKey = process.env.API_KEY
+    const data = await request(`${apiBase}/graphql`, configQuery, {
+      apiKey,
+    })
+    this.botToken = data.config.botToken
+  }
+
   async start() {
     try {
-      await this.client.login(process.env.BOT_TOKEN)
+      await this.loadConfig()
+      await this.client.login(this.botToken)
     } catch (err) {
       console.error('Error running bot', err)
     }

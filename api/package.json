@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "^0.23.0",
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.4.0"
   },
   "scripts": {
     "start-bot": "node dist/lib/bot"
