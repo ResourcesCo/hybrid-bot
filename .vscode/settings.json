@@ -7,5 +7,6 @@
   },
   "[prisma]": {
     "editor.formatOnSave": true
-  }
+  },
+  "github.remoteName": "gitlab"
 }
